@@ -1,99 +1,83 @@
+#include<iostream>
+
+template <typename T >
 class BRTreeNode{
 public:
-        //black = 0, red = 1
-        bool _blackRed = 0;
-        int data;
-        BRTreeNode* left = nullptr;
-        BRTreeNode* right = nullptr;
-        BRTreeNode* parent = nullptr;
+    //black = 0, red = 1
+    bool color = 0;
+    char data;
+    BRTreeNode<T>* left = nullptr;
+    BRTreeNode<T>* right = nullptr;
+    BRTreeNode<T>* parent = nullptr;
 public:
     BRTreeNode(){}
     BRTreeNode(int val): data(val){}
-    BRTreeNode(int val, BRTreeNode* l, BRTreeNode* r) : data(val), left(l), right(r){}
-    BRTreeNode(int val, BRTreeNode* p, BRTreeNode* l, BRTreeNode* r) : data(val), parent(p), left(l), right(r){}
+    BRTreeNode(int val, BRTreeNode<T>* l, BRTreeNode<T>* r) : data(val), left(l), right(r){}
+    BRTreeNode(int val, BRTreeNode<T>* p, BRTreeNode<T>* l, BRTreeNode<T>* r) : data(val), parent(p), left(l), right(r){}
 
-    void LeftRotation(BRTreeNode*);
-    void RightRotation(BRTreeNode*);
-    BRTreeNode* Successor();
-    BRTreeNode* Predecessor();
-    BRTreeNode* Minimum();
-    BRTreeNode* Maximum();
     ~BRTreeNode(){}
-};
+    BRTreeNode<T>* Minimum(BRTreeNode<T>*  nil){
+        BRTreeNode* node = this;
+        while(node->left != nil)
+            node = node->left;
+        return node;
+    }
 
-std::ostream& operator<<(std::ostream& os, BRTreeNode* node){
+    BRTreeNode<T>* Maximum(BRTreeNode<T>*  nil){
+        BRTreeNode<T>** node = this;
+        while(node->right!=nil)
+            node = node->right;
+        return node;
+    }
+
+    BRTreeNode<T>* Successor(BRTreeNode<T>*  nil){
+        BRTreeNode<T>* node = this;
+        if(this->right != nil)
+            return this->right->Minimum(nil);
+
+        BRTreeNode<T>* p = node->parent;
+        while(p!=nil && p->right == node){
+            node = p;
+            p = p->parent;
+        }
+        return p;
+    }
+
+    BRTreeNode<T>* Predecessor(BRTreeNode<T>*  nil){
+        BRTreeNode<T>* node = this;
+        if(node->left != nil)
+            return node->left->Maximum(nil);
+        BRTreeNode<T>* p = node->parent;
+        while(p!=nil && p->left == node){
+            node = p;
+            p = p->parent;
+        }
+        return p;
+    }
+
+};
+template <typename T>
+std::ostream& operator<<(std::ostream& os, BRTreeNode<T>* node){
     os<<node->data;
     return os;
 }
-//
-//void BRTreeNode::LeftRotation(BRTreeNode* nil) {
-//    BRTreeNode rot = this->right;
-//    this->left = rot->right;
-//    if(rot->right != nil){
-//        root->right->parent = this;
-//    }
-//    rot->parent = this->parent;
-//    else if(this->parent ==  nil){
-//        root = rot;
-//    }
-//    else{
-//        this->parent->right = rot;
-//    }
-//    rot->right = this;
-//    this->parent = rot;
-//}
-//
-//void BRTreeNode::RightRotation(BRTreeNode* nil) {
-//    BRTreeNode rot = this->left;
-//    this->right = rot->left;
-//    if(rot->left != nil){
-//        rot->left->parent = this;
-//    }
-//    rot->parent = this->parent;
-//    else if(this->parent ==  nil){
-//        root = rot;
-//    }
-//    else{
-//        this->parent->right = rot;
-//    }
-//    rot->left = this;
-//    this->parent = rot;
-//}
 
-BRTreeNode* BRTreeNode::Minimum(){
-    BRTreeNode* node = this;
-    while(node->left)
-        node = node->left;
-    return node;
-}
-
-BRTreeNode* BRTreeNode::Maximum(){
-    BRTreeNode* node = this;
-    while(node->right)
-        node = node->right;
-    return node;
-}
-
-BRTreeNode* BRTreeNode::Successor(){
-    BRTreeNode* node = this;
-    if(node->right)
-        return node->right;
-    BRTreeNode* p = node->parent;
-    while(p && p->right == node){
-        node = p;
-        p = p->parent;
-    }
-    return p;
-}
-
-BRTreeNode* BRTreeNode::Predecessor(){
-    BRTreeNode* node = this;
-    if(node->left)
-        return node->left;
-    BRTreeNode* p = node->parent;
-    while(p && p->left == node){
-        node = p;
-        p = p->parent;
-    }
-    return p;
+template<typename T>
+void Print(BRTreeNode<T>* node, BRTreeNode<T>* nil){
+    std::ostream& os = std::cout;
+    if(node->parent != nil)
+        os<<"  "<<node->parent->data<<'\n';
+    else
+        os<<"  null\n";
+    os<<"   |\n   "<<node->data<<'\n';
+    os<<" /   \\\n";
+    if(node->left != nil)
+        os<<node->left->data<<"     ";
+    else
+        os<<"null  ";
+    if(node->right != nil)
+        os<<node->right->data;
+    else
+        os<<"null";
+    os<<std::endl;
 }
