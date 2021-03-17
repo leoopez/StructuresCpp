@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated />
   </component>
@@ -9,11 +27,18 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11c4d392-eee5-4e30-b488-bf95aa4f23c9" name="Default Changelist" comment="">
+    <list default="true" id="43f5c4ee-f977-4278-9861-cf6010d33729" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Tree/BinaryTree/BinaryTree.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tree/BinaryTree/BinaryTree.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tree/BinaryTree/RedBlackTree.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tree/BinaryTree/RedBlackTree.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/btree/BTree" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/btree/BTree.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/btree/TreeNode.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tree/BinaryTree/BRTree.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tree/BinaryTree/BRTreeNode.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tree/BinaryTree/BTree.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tree/BinaryTree/TreeNode.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tree/BinaryTree/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/BinaryTree/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tree/BinaryTree/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/BinaryTree/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +51,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1pi7l40yf2OnePCjjmcWpzZLgcD" />
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
+  </component>
+  <component name="ProjectId" id="1ptCuRsrnKnQb3ExITIdOLE0CJS" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -35,6 +65,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -43,35 +74,51 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="11c4d392-eee5-4e30-b488-bf95aa4f23c9" name="Default Changelist" comment="" />
-      <created>1615654209050</created>
+      <changelist id="43f5c4ee-f977-4278-9861-cf6010d33729" name="Default Changelist" comment="" />
+      <created>1615993225997</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1615654209050</updated>
-      <workItem from="1615654214305" duration="7389000" />
-      <workItem from="1615676159445" duration="2265000" />
-      <workItem from="1615679230555" duration="9221000" />
+      <updated>1615993225997</updated>
+      <workItem from="1615993228830" duration="16907000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1615679245769">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1616009895097">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1615679245769" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1615678899575">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1616009895097" />
+    <state x="635" y="279" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup" timestamp="1616015765964">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1615678899575" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1615679007853">
+    <state x="635" y="279" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup/0.0.1536.824@0.0.1536.824" timestamp="1616015765964" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1615999915811">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1615679007853" />
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1615999915811" />
   </component>
 </project>
