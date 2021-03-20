@@ -1,7 +1,3 @@
-//
-// Created by leort on 3/17/2021.
-//
-
 #ifndef STRUCTURESCPP_BINARYTREE_HPP
 #define STRUCTURESCPP_BINARYTREE_HPP
 

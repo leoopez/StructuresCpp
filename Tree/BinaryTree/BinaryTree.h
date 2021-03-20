@@ -1,6 +1,5 @@
-#include<iostream>
-#include<functional>
-#include<vector>
+#ifndef STRUCTURESCPP_BINARYTREE_H
+#define STRUCTURESCPP_BINARYTREE_H
 
 template <typename T>
 class BinaryTree{
@@ -12,28 +11,8 @@ public:
         }
     }
 
+    class TreeNode;
 
-    class TreeNode{
-    public:
-        int _height;
-        T data;
-        TreeNode* left =   nullptr;
-        TreeNode* right =  nullptr;
-        TreeNode* parent = nullptr;
-    public:
-        TreeNode(){}
-
-        TreeNode(T val): data(val){}
-        TreeNode(T val, TreeNode* l, TreeNode* r) : data(val), left(l), right(r){}
-        TreeNode(T val, TreeNode* p, TreeNode* l, TreeNode* r) : data(val), parent(p), left(l), right(r){}
-
-        friend std::ostream& operator<<(std::ostream& os, TreeNode* node) {
-            os << node->data;
-            return os;
-        }
-
-        ~TreeNode(){}
-    };
 
     TreeNode* root = nullptr;
     int _size = 0;
@@ -57,5 +36,30 @@ public:
 
     ~BinaryTree(){};
 };
+template <typename T>
+class BinaryTree<T>::TreeNode{
+public:
+    int _height;
+    T data;
+    TreeNode* left =   nullptr;
+    TreeNode* right =  nullptr;
+    TreeNode* parent = nullptr;
+public:
+    TreeNode(){}
+
+    TreeNode(T& val): data(val){}
+    TreeNode(T& val, TreeNode* l, TreeNode* r) : data(val), left(l), right(r){}
+    TreeNode(T& val, TreeNode* p, TreeNode* l, TreeNode* r) : data(val), parent(p), left(l), right(r){}
+
+    friend std::ostream& operator<<(std::ostream& os, TreeNode* node) {
+        os << node->data;
+        return os;
+    }
+
+    ~TreeNode(){}
+};
+
 
 #include "BinaryTree.hpp"
+
+#endif //STRUCTURESCPP_BINARYTREE_H

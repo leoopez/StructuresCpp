@@ -1,7 +1,3 @@
-//
-// Created by leort on 3/17/2021.
-//
-
 #ifndef STRUCTURESCPP_REDBLACKTREE_H
 #define STRUCTURESCPP_REDBLACKTREE_H
 
