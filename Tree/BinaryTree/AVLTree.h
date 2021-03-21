@@ -26,8 +26,15 @@ public:
     //subrutines
     void _fixup_insert(AVLNode* node);
     void _left_rotation(AVLNode* node);
+    void _right_rotation(AVLNode* node);
+    void _right_left_rotation(AVLNode* node);
+    void _left_right_rotation(AVLNode* node);
 
+    void _balance(AVLNode* node, short int& b);
     void print_pre_order();
+    void _updateHeight(AVLNode* node);
+
+
 
 };
 
@@ -45,12 +52,14 @@ public:
     AVLNode(T& val, AVLNode* l, AVLNode* r): data(val), left(l), right(r){}
     AVLNode(T& val, AVLNode* p, AVLNode* l, AVLNode* r): data(val), parent(p), left(l), right(r){}
 
-
+    void print_info(){
+        std::cout<<"node: "<<this<<"h("<<this->_height<<") "<<"(p:"<<this->parent<<" l:"<<this->left<<" r:"<<this->right<<")"<<std::endl;
+    }
     friend std::ostream& operator<<(std::ostream& os, AVLNode* node){
-        os<<node->data<<" h:"<<node->_height;
+        if(!node) os<<"null";
+        else os<<node->data;
         return os;
     }
-
 };
 
 template <typename T>
@@ -58,6 +67,8 @@ int AVLTree<T>::getHeight(AVLNode* node){
     if(!node) return -1;
     return node->_height;
 }
+
+
 
 #endif //STRUCTURESCPP_AVLTREE_H
 #include "AVLTree.hpp"

@@ -18,12 +18,16 @@ void AVLTree<T>::insert(AVLNode* node){
     AVLNode* pos = root;
 
     while(pos){
-        pos->_height++;
         parent = pos;
-        if(pos->data > node->data)
+        if(pos->data > node->data){
             pos = pos->left;
-        else
+            parent->_height = 1 + std::max(getHeight(parent->left)+1, getHeight(parent->right));
+        }
+
+        else{
             pos = pos->right;
+            parent->_height = 1 + std::max(getHeight(parent->left), getHeight(parent->right)+1);
+        }
     }
     if(parent->data > node->data)
         parent->left = node;
@@ -31,13 +35,102 @@ void AVLTree<T>::insert(AVLNode* node){
         parent->right = node;
     node->parent = parent;
     _size++;
-    //_fixup_insert(parent->parent);
+    _fixup_insert(node);
 }
 
 template <typename T>
-void AVLTree<T>::remove(AVLNode* node){
-
+void AVLTree<T>::_updateHeight(AVLNode* node){
+    node->_height = 1 + std::max(getHeight(node->left), getHeight(node->right));
 }
+
+
+template <typename T>
+void AVLTree<T>::_fixup_insert(AVLNode* node){
+
+    short int bal = getHeight(node->left) - getHeight(node->right);
+
+    if(bal > 1 || bal < -1){
+        _balance(node, bal);
+    }else{
+        _updateHeight(node);
+    }
+
+    if(!node->parent) return;
+
+    _fixup_insert(node->parent);
+}
+
+template <typename T>
+void AVLTree<T>::_balance(AVLNode* node, short int& b){
+    if(b == -2) {
+        if (getHeight(node->right->left) < getHeight(node->right->right)) {
+            _left_rotation(node->right);
+        }
+        else {
+            _right_rotation(node->right->left);
+            _left_rotation(node->right);
+        }
+    }
+    else{
+        if(getHeight(node->left->right) < getHeight(node->left->left)){
+            _right_rotation(node->left);
+        }
+        else{
+            _left_rotation(node->left->right);;
+            _right_rotation(node->left);
+        }
+    }
+}
+
+template <typename T>
+void AVLTree<T>::_left_rotation(AVLNode* node){
+
+    AVLNode* temp = node->parent;
+    temp->right = node->left;
+    node->left = temp;
+    node->parent = temp->parent;
+
+    temp->parent = node;
+
+    if(!node->parent){
+        root = node;
+    }
+    else{
+        if(node->parent->right == temp){
+            node->parent->right = node;
+        }
+        else{
+            node->parent->left = node;
+        }
+
+    }
+    _updateHeight(temp);
+    _updateHeight(node);
+}
+
+template <typename T>
+void AVLTree<T>::_right_rotation(AVLNode* node){
+    AVLNode* temp = node->parent;
+    temp->left = node->right;
+    node->right = temp;
+    node->parent = temp->parent;
+    temp->parent = node;
+
+    if(!node->parent){
+        root = node;
+    }
+    else{
+        if(node->parent->left == temp){
+            node->parent->left = node;
+        }
+        else{
+            node->parent->right = node;
+        }
+    }
+    _updateHeight(temp);
+    _updateHeight(node);
+}
+
 
 template <typename T>
 typename AVLTree<T>::AVLNode* AVLTree<T>::search(T& key) const {
@@ -51,36 +144,19 @@ typename AVLTree<T>::AVLNode* AVLTree<T>::search(T& key) const {
     }
     return node;
 }
-//
-//
-//template <typename T>
-//void AVLTree<T>::_fixup_insert(AVLNode* node){
-//
-//
-//
-//
-//}
-//
-//template <typename T>
-//int AVLTree<T>::_getBalance(AVLNode* node){
-//
-//}
 
-//template <typename T>
-//void AVLTree<T>::_left_rotation(AVLNode* node){
-//
-//    node->right->left = node;
-//    node->right->parent = node->parent;
-//    node->parent = node->right->parent;
-//    node->right = node->right->left;
-//    return;
-//}
+
+template <typename T>
+void AVLTree<T>::remove(AVLNode* node){
+
+}
 
 template <typename T>
 void AVLTree<T>::print_pre_order(){
     std::ostream& os = std::cout;
     std::function<void(AVLNode*)> PreOrder = [&](AVLNode* node){
         if(!node) return;
+
         os<<node<<" ";
         PreOrder(node->left);
         PreOrder(node->right);

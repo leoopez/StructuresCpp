@@ -28,14 +28,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43f5c4ee-f977-4278-9861-cf6010d33729" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Tree/BinaryTree/AVLTree.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tree/BinaryTree/AVLTree.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tree/BinaryTree/BinaryTree.h" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/BinaryTree/BinaryTree.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tree/BinaryTree/BinaryTree.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/BinaryTree/BinaryTree.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tree/BinaryTree/RedBlackTree.h" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/BinaryTree/RedBlackTree.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tree/BinaryTree/RedBlackTree.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/BinaryTree/RedBlackTree.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tree/BinaryTree/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tree/BinaryTree/AVLTree.h" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/BinaryTree/AVLTree.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tree/BinaryTree/AVLTree.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/BinaryTree/AVLTree.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tree/BinaryTree/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/BinaryTree/a.out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tree/BinaryTree/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/BinaryTree/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +80,9 @@
       <workItem from="1616040737704" duration="3648000" />
       <workItem from="1616098889115" duration="7169000" />
       <workItem from="1616186911851" duration="11030000" />
-      <workItem from="1616226497903" duration="90000" />
+      <workItem from="1616226497903" duration="177000" />
+      <workItem from="1616258480972" duration="6629000" />
+      <workItem from="1616271125996" duration="13646000" />
     </task>
     <servers />
   </component>
@@ -108,21 +106,25 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="71" key="#New_File_Extensions/0.0.1536.824@0.0.1536.824" timestamp="1616102261843" />
+    <state x="515" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1616264084811">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="515" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1616264084811" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1616009895097">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1616009895097" />
-    <state x="635" y="279" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup" timestamp="1616202282147">
+    <state x="635" y="279" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup" timestamp="1616284196090">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="635" y="279" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup/0.0.1536.824@0.0.1536.824" timestamp="1616202282147" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1615999915811">
+    <state x="635" y="279" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup/0.0.1536.824@0.0.1536.824" timestamp="1616284196090" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1616266565522">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1615999915811" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1616106883943">
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1616266565522" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1616282343174">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1616106883943" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1616282343174" />
   </component>
 </project>
