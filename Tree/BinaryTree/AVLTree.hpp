@@ -48,7 +48,6 @@ template <typename T>
 void AVLTree<T>::_fixup_insert(AVLNode* node){
 
     short int bal = getHeight(node->left) - getHeight(node->right);
-
     if(bal > 1 || bal < -1){
         _balance(node, bal);
     }else{
@@ -148,7 +147,85 @@ typename AVLTree<T>::AVLNode* AVLTree<T>::search(T& key) const {
 
 template <typename T>
 void AVLTree<T>::remove(AVLNode* node){
+    std::function<void(AVLNode*, AVLNode*)> swap = [&](AVLNode* u, AVLNode* v){
+        if(!u->parent){
+            root = v;
+        }
+        else if (u->parent->left == u)
+            u->left = v;
+        else
+            u->right = v;
+        if(v)
+            v->parent = u->parent;
+    };
+    AVLNode* y = nullptr;
+    if(!node->left){
+        y = node->left;
+        swap(node, node->left);
+        y->_height = 1 + std::max(getHeight(y->left),getHeight(y->right));
+    }
+    else if(!node->right){
+        y = node->left;
+        swap(node, node->left);
+        y->_height = 1 + std::max(getHeight(y->left),getHeight(y->right));
+    }
+    else {
+        y = successor(node);
+        if (y->parent != node) {
+            swap(y, y->right);
+            y->parent = node->parent;
+        }
+        swap(node, y);
+        y->left = node->left;
+        y->left->parent = y;
+        y->_height = 1 + std::max(getHeight(y->left),getHeight(y->right));
+        _fixup_insert(y);
+    }
 
+    delete node;
+
+    //_fixup_insert(to_balance);
+    _size--;
+    return;
+}
+
+
+template <typename T>
+typename AVLTree<T>::AVLNode* AVLTree<T>::minimum(AVLNode* node){
+    while(node->left)
+        node = node->left;
+    return node;
+}
+
+template <typename T>
+typename AVLTree<T>::AVLNode* AVLTree<T>::maximum(AVLNode* node){
+    while(node->right)
+        node = node->right;
+    return node;
+}
+
+template <typename T>
+typename AVLTree<T>::AVLNode* AVLTree<T>::predecessor(AVLNode* node){
+    if(node->left)
+        return maximum(node->left);
+    AVLNode* p = node->parent;
+    while(p && p->left == node){
+        node = p;
+        p = p->parent;
+    }
+    return p;
+}
+
+template <typename T>
+typename AVLTree<T>::AVLNode* AVLTree<T>::successor(AVLNode* node){
+    if(node->right)
+        return minimum(node->right);
+    AVLNode* p = node->parent;
+    while(p && p->right == node){
+        node = p;
+        p = p->parent;
+    }
+    return p;
 }
 
 template <typename T>

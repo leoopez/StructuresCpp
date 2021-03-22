@@ -42,14 +42,16 @@ void debug_2(){
     while(tree_2->root){
         tree_2->print_in_order();
         tree_2->remove(tree_2->root);
-    }wqqq
+    }
 }
 
 void debug_3(){
-    std::vector<int> values_dbl{43, 18, 22, 9, 21, 6, 8, 20, 63, 50, 62, 51};
+    std::vector<int> values_dbl{43, 18, 22, 9};
     using btdbl = AVLTree<int>;
     std::unique_ptr<btdbl> tree_3 = std::make_unique<btdbl>(values_dbl);
     //tree_3->print_pre_order();
+
+    tree_3->remove(tree_3->root);
     AVLTree<int>::AVLNode* node = tree_3->root;
 
     std::stack<AVLTree<int>::AVLNode*> nodes;

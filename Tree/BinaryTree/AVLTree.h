@@ -35,7 +35,10 @@ public:
     void _updateHeight(AVLNode* node);
 
 
-
+    AVLNode* minimum(AVLNode* node);
+    AVLNode* maximum(AVLNode* node);
+    AVLNode* successor(AVLNode* node);
+    AVLNode* predecessor(AVLNode* node);
 };
 
 template <typename T>
